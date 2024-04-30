@@ -358,6 +358,8 @@ plugins:
     # Enable the Outdated Browser plugin
     # http://outdatedbrowser.com/
     outdated_browser: true
+    # Enable PJAX
+    pjax: true
     # Show a progress bar at top of the page on page loading
     progressbar: true
     # Statcounter statistics
@@ -376,8 +378,8 @@ plugins:
 # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
 providers:
     # Name or URL template of the JavaScript and/or stylesheet CDN provider
-    cdn: jsdelivr
+    cdn: '[cdnjs]https://lib.baomitu.com/${package}/${version}/${filename}'
     # Name or URL template of the webfont CDN provider
-    fontcdn: google
+    fontcdn: fontim
     # Name or URL of the fontawesome icon font CDN provider
-    iconcdn: fontawesome
+    iconcdn: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/font-awesome/6.0.0/css/all.min.css

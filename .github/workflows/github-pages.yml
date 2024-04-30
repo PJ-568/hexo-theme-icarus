@@ -11,15 +11,11 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
-      - run: npx hexo algolia
-        env:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+      - run: npx hexo
       - name: Override changes
         run: |
           cp -vrf override_changes/* node_modules/hexo-theme-icarus/
       - run: NODE_ENV=production npx hexo g
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          force_orphan: true
+          folder: public
